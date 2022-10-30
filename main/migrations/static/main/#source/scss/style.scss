@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "nullStyle.scss";
+@import url("input.scss");
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+}
+
+.container{
+    max-width: 1678px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+// первый блок
+.header {
+    min-width: 100%;
+
+    &__eqweqwe{
+        display: flex;
+    }
+
+    &__image {
+        background: url('/img/image_1.jpg') no-repeat center top;
+        height: 100%;
+        padding: 40px 0 250px 0;
+    }
+
+
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 74px;
+        position: relative;
+    }
+
+    &__adress {
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+    }
+
+    &__item {
+        display: flex;
+        font-size: 18px;
+        flex-wrap: wrap;
+        padding-left: 60px;
+    }
+
+    &__btn {
+        display: block;
+        background-color: #fff;
+        border-radius: 50px;
+        color: black;
+        max-width: 250px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 22px;
+        margin-top: 25%;
+        margin-left: 100px;
+        transition: all 0.5s ease;
+            &:hover{
+                background-color: #bbbbbb;
+                box-shadow: 0 4px 10px #000;
+                color: #fff;
+            }
+            &:active{
+                background-color: rgb(146, 148, 38);
+            }
+    }
+}
+.items {
+    color: #fff;
+    padding: 0 30px;
+}
+
+
+// Второй блок
+.aboutUs {
+
+    padding: 70px 0;
+    
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__text {
+        color: #fff;
+        font-size: 48px;
+        line-height: 59px;
+        padding: 0 40px;
+        flex: 1 1 50%;
+        text-align: center;
+    }
+
+    &__image{
+        margin: 0 auto;
+    }
+
+}
+
+.gallary{
+    padding: 0 0 70px 0;
+}
+
+
+// Четвёртый блок
+.record {
+    max-width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/img/record_bg.jpg') no-repeat center top;
+    background-size: cover;
+    max-height: 100%;
+    padding: 100px 0;
+    position: relative;
+        &__recording{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 25px 50px;
+        }
+    input 				{
+        font-size:18px;
+        padding:10px 10px 10px 5px;
+        display:block;
+        width:300px;
+        border:none;
+        border-bottom:1px solid #757575;
+        background: rgba(0,0,0,0.2);
+        color: #fff;
+      }
+      input:focus 		{ outline:none; }
+      
+      /* BOTTOM BARS ================================= */
+      .bar 	{ position:relative; display:block; width:300px; }
+      .bar:before, .bar:after 	{
+        content:'';
+        height:2px; 
+        width:0;
+        bottom:1px; 
+        position:absolute;
+        background:#5264AE; 
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+      }
+      .bar:before {
+        left:50%;
+      }
+      .bar:after {
+        right:50%; 
+      }
+      
+      /* active state */
+      input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width:50%;
+      }
+      
+      /* HIGHLIGHTER ================================== */
+      .highlight {
+        position:absolute;
+        height:60%; 
+        width:100px; 
+        top:25%; 
+        left:0;
+        pointer-events:none;
+        opacity:0.5;
+      }
+      
+      /* active state */
+      input:focus ~ .highlight {
+        -webkit-animation:inputHighlighter 0.3s ease;
+        -moz-animation:inputHighlighter 0.3s ease;
+        animation:inputHighlighter 0.3s ease;
+      }
+      
+      /* ANIMATIONS ================ */
+      @-webkit-keyframes inputHighlighter {
+          from { background:#5264AE; }
+        to 	{ width:0; background:transparent; }
+      }
+      @-moz-keyframes inputHighlighter {
+          from { background:#5264AE; }
+        to 	{ width:0; background:transparent; }
+      }
+      @keyframes inputHighlighter {
+          from { background:#5264AE; }
+        to 	{ width:0; background:transparent; }
+      }
+}
+
+.table {
+    border-collapse: collapse;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 22px;
+    width: 50%;
+        th, td{
+            padding: 30px 0;
+            border: 1px solid #fff;
+            text-align: center;
+            
+        }
+}
+
+
+// Пятый блок
+.staff {
+    padding: 70px 0;
+
+    &__title {
+        color: #fff;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 60px;
+        text-align: center;
+            &:before{
+                content: "—";
+                padding: 0 15px;
+            }
+            &:after{
+                content: "—";
+                padding: 0 15px;
+            }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &__person {
+        padding-top: 60px;
+        position: relative;
+    }
+
+    &__post{
+        color: #fff;
+        position: absolute;
+        font-size: 24px;
+        right: 22.5%;
+        line-height: 50px;
+    }
+    &__network{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+    }
+
+    &__img {
+        position: relative;
+            img{
+                max-width: 450px;
+                max-height: 700px;
+            }
+    }
+
+    &__btn {
+        display: block;
+        background-color: #fff;
+        border-radius: 10px;
+        color: black;
+        max-width: 250px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 22px;
+        margin-left: 100px;
+        margin-top: 45px;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+            &:hover{
+                background-color: #bbbbbb;
+                box-shadow: 0 4px 10px #000;
+                color: #fff;
+            }
+            &:active{
+                background-color: rgb(146, 148, 38);
+            }
+    }
+}
+.network__icon{
+    height: 60px;
+}
+
+// Карта
+.map{
+    display: flex;
+    width: 100%;
+
+    &__piercing{
+        position:relative;
+        overflow:hidden;
+        border-radius:30px;
+        width: 100%;
+    }
+}
+
+.footer {
+
+    padding: 20px 0 50px;
+
+    &__row{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__adress {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__number {
+        text-align: center;
+    }
+
+    &__street{
+        margin-top: 10px;
+    }
+
+    a{
+        color: #fff;
+        padding: 0 20px;
+    }
+}

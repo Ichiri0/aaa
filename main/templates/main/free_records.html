@@ -1,0 +1,56 @@
+{% extends 'main/base_free_records.html' %}
+
+{% load static %}
+
+{% block css_additional %}
+<link rel="stylesheet" href=" {% static 'main/css/style.css' %}">
+<link rel="stylesheet" href=" {% static 'main/css/slider.css' %}">
+{% endblock %}
+
+
+{% block title %}
+Свободные записи
+{% endblock %}
+
+{% block content %}
+            <div class="record" id="record">
+                <div class="record__recording">
+                    <form action="{% url 'free_records_default' %}" >
+                        <input type="text" name="q"  required placeholder="Введите дату">
+                        <input type="submit" value="Найти" style="color: greenyellow">
+                    </form>
+                    <form action="{% url 'free_records_default' %}" >
+                        <input type="submit" value="Сбросить" style="color: red" >
+                    </form>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                </div>
+                    <div class="table_group">
+                        <table class="table">
+                        <div style="color: #dddddd">Татуировки</div>
+                        <div class="container_table">
+                            <tr><th>Дата</th><th>Время</th></tr>
+                            {% for record in records_tatt %}
+                                <tr><td>{{ record.date }}</td><td>{{ record.time }}</td></tr>
+                            {% endfor %}
+
+                        </div>
+                    </table>
+                    <table class="table">
+                    <div style="color: #dddddd">Пирсинг</div>
+                        <div class="container_table">
+                            <tr><th>Дата</th><th>Время</th></tr>
+                            {% for record in records_pier %}
+                                <tr><td>{{ record.date }}</td><td>{{ record.time }}</td></tr>
+                            {% endfor %}
+                        </div>
+                    </table>
+                    </div>
+
+
+                <div class="container">
+{#                    <a href="{% url 'add_user' %}">Добавить пользователя</a>#}
+                </div>
+            </div>
+
+{% endblock %}

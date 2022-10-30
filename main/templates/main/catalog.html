@@ -1,0 +1,90 @@
+{% block title %}
+{% endblock %}
+{% load static %}
+
+{% block css_additional %}
+
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script ENGINE="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js "></script>
+    <link rel="stylesheet" href=" {% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href=" {% static 'main/css/slider.css' %}">
+    <link rel="shortcut icon" href="static/main/img/icon/favicon.ico" type="images/x-icon">
+    <title>Каталог товаров</title>
+
+</head>
+<div class="wrapper">
+    <header class="header" id="header">
+                <div class="header__image" id="top">
+                    <div class="container">
+                        <div class="header__row">
+                            <div class="header__menu">
+                                <div class="header__adress">
+                                    <div class="number"><a href="tel:+79964104173">+7 (996) 410-41-73</a></div>
+                                    <div class="street">г.Краснодар, ул.Чапаева 69</div>
+                                </div>
+                                <div class="header__item">
+                                    <a href="/" class="items">Главная</a>
+                                    <a href="/catalog" class="items act">Каталог</a>
+                                </div>
+                            </div>
+                            <a href="https://vk.com/piercing_tattoo_krd" class="header__btn">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        <div class="content">
+            <div class="goods">
+                <div class="container">
+                    <div class="goods__body">
+
+                        <div class="goods__item__card">
+                            <a href="https://vk.com/sugimo" alt="При покупке сертификата звонить по номеру телефона: +7(996)410-41-73" class="lake">
+                                <div class="goods__discription">
+                                    <div class="goods__img">
+                                        <img src="static/main/img/goods/card of present.jpg" alt="">
+                                    </div>
+                                    <div class="goods__title">Подарочный сертификат на любую сумму от Piercing.krd</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="goods__main__header">Все товары хранятся на складе, для консультации по цене и предзаказа обращаться напрямую к мастеру по пирсингу.</div>
+                        <div class="goods__row">
+                            {% for good in goods %}
+                                <div class="goods__item">
+                                <a href="https://vk.com/sugimo" alt="Для подробной отдельной консультации и заказа товара обращаться к https://vk.com/sugimo. Нажмите на картинку для перехода." class="lake">
+                                    <div class="goods__discription">
+                                        <div class="goods__img">
+                                            {% if object.image.url == None %}
+                                                <img src="{{ MEDIA_URL }}{{good.image.url}}" alt="">
+                                            {% else %}
+                                                <img src="no_image.jpg" />
+                                            {% endif %}
+                                        </div>
+                                        <div class="goods__title">{{ good.name }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+         <!-- sroll top -->
+        <div class="scroll__top isShowBtn_hide">
+            <a href="#" class="back-to-top"><img src="static/main/img/icon/arrow_up.png" alt=""></a>
+        </div>
+
+    </div>
+<script src="static/main/js/smooth_scrolling.js"></script>
+<script src="static/main/js/main.js"></script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление пользователя</title>
+</head>
+<body>
+    <h1>Добавьте пользователя!</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.last_name }}<br>
+        {{ form.name }}<br>
+        {{ form.middle_name }}<br>
+        {{ form.email }}<br>
+        {{ form.phone }}<br>
+        <button type="submit">Добавить</button>
+        <span>{{ error }}</span>
+    </form>
+</body>
+</html>

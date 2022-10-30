@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script ENGINE="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js "></script>
+    <link rel="shortcut icon" href="static/main/img/icon/favicon.ico" type="images/x-icon">
+    <title>{% block title %}{% endblock %}</title>
+    {% block css_additional %} {% endblock %}
+</head>
+<header class="header" id="header">
+                <div class="header__image">
+                    <div class="container">
+                        <div class="header__row">
+                            <div class="header__menu">
+                                <div class="header__adress">
+                                    <div class="number"><a href="tel:+79964104173">+7 (996) 410-41-73</a></div>
+                                    <div class="street">г.Краснодар, ул.Чапаева 69</div>
+                                </div>
+                                <div class="header__item">
+                                    <a href="{% url 'home' %}" class="items act">Главная</a>
+                                    <a href="{% url 'catalog' %}" class="items">Каталог</a>
+                                    <a href="#gallary" class="items">Галерея</a>
+                                    <!-- <a href="#staff" class="items">Наши мастера</a> -->
+                                    <a href="#map" class="items">Контакты</a>
+                                </div>
+                            </div>
+                            <a href="#record"  class="header__btn">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
